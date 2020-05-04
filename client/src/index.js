@@ -6,7 +6,11 @@ import * as serviceWorker from './serviceWorker';
 
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from '@apollo/react-hooks'
-const port = 3300;
+
+//PUERTO SERVIDOR BACKEND
+const port = 3500;
+//-----------------------
+
 const client = new ApolloClient({
   uri: `http://localhost:${port}`,
   request: (operation) => {

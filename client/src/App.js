@@ -23,9 +23,9 @@ import "bootswatch/dist/simplex/bootstrap.min.css";
 
 import "jquery";
 
-const GET_PERSONAS = gql`
+const GET_PERSONAS_TODAS = gql`
   {
-    getPersonas {
+    getPersonasTodas {
       identificador
       tipodoc
       documento
@@ -93,7 +93,7 @@ const App = () => {
   // const [token, saveToken] = useState("");
   const [accion, setAccion] = useState("");
   const [createDefault] = useMutation(CREATE_DEFAULT);
-  const getPersonas = useQuery(GET_PERSONAS);
+  const getPersonasTodas = useQuery(GET_PERSONAS_TODAS);
 
   const getPersonaLogin = useQuery(GET_PERSONALOGIN, {
     variables: { documento, password },
@@ -102,10 +102,8 @@ const App = () => {
   const getLogin = useQuery(GET_LOGIN, {
     variables: { token: token ? token : "d" },
   });
-
   useEffect(() => {
-    if (!getPersonas.loading && !getPersonas.data) {
-      console.log(getPersonas);
+    if (getPersonasTodas.data && getPersonasTodas.data.getPersonasTodas.length === 0) {
       alert("No hay personas registradas en el sistema. Se creará el usuario por defecto.");
       createDefault()
         .then(({ data }) => {
@@ -116,6 +114,8 @@ const App = () => {
             alert("No se pudo registrar el usuario por defecto. Reintente");
         });
     }
+  }, [getPersonasTodas]);
+  useEffect(() => {
     if (sessionStorage.getItem("token")) {
       saveToken(sessionStorage.getItem("token"));
     }
@@ -130,7 +130,6 @@ const App = () => {
         );
         saveToken(persona.token);
         let rol = "";
-        console.log(persona);
         if (persona.admin === "si") {
           rol = "admin";
         } else {
@@ -182,7 +181,7 @@ const App = () => {
     ) {
       window.location.pathname = "/login";
     }
-  }, [getPersonaLogin, getPersonas, getLogin, accion, token]);
+  }, [getLogin, getPersonaLogin]);
 
   const login = ({ documento, password }) => {
     setDocumento(documento);
