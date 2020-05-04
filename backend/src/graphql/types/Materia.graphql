@@ -1,0 +1,25 @@
+type Materia {
+    identificador: UUID!
+    idcarrera: UUID!
+    nombre: String!
+    descripcion: String!
+    carrera: Carrera
+    curso: [Curso]
+}
+
+type Query {
+    getMaterias: [Materia!],
+    getMateriasCar (idcarrera: UUID!): [Materia!],
+    getMateria (identificador: UUID!): Materia!
+}
+
+type Mutation {
+    createMateria(input: CreateMateriaInput): Materia,
+    updateMateria(identificador: UUID! idcarrera: UUID! nombre: String! descripcion: String!): Materia
+}
+
+input CreateMateriaInput {
+    idcarrera: UUID!,
+    nombre: String!,
+    descripcion: String!
+}

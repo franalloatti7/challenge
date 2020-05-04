@@ -1,0 +1,30 @@
+type Inscripciones_curso {
+    identificador: UUID!
+    idalumno: UUID!
+    idcurso: UUID!
+    fechainscripcion: Date!
+    nota: Int
+    estado: String!
+    curso: Curso!
+    alumno: Alumno!
+    token: String
+}
+
+type Query {
+    getInscripciones_cursos(idcurso: UUID!) : [Inscripciones_curso!],
+    getMisInscripciones(token: String!) : [Inscripciones_curso!],
+    getInscripcionesAnteriores(idalumno: UUID!) : [Inscripciones_curso!],
+    getInscripciones_curso (identificador: UUID!): Inscripciones_curso!
+}
+
+type Mutation {
+    createInscripciones_curso(input: CreateInscripciones_cursoInput): Inscripciones_curso,
+    updateNotaAlumno(nota: Int!, estado: String!, identificador: UUID!, token: String!): Inscripciones_curso
+}
+
+input CreateInscripciones_cursoInput {
+    idcurso: UUID!,
+    fechainscripcion: Date!,
+    estado: String!,
+    token: String
+}

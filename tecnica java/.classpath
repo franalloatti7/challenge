@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="alloatti.francisco/workspace-java/proyecto-java-examen/src"/>
+	<classpathentry kind="src" path="tecnica.java/workspace-java/proyecto-java-examen/src"/>
+	<classpathentry kind="output" path="alloatti.francisco/workspace-java/proyecto-java-examen/bin"/>
+</classpath>

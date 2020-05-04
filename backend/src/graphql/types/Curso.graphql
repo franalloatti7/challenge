@@ -1,0 +1,32 @@
+type Curso {
+    identificador: UUID!
+    idmateria: UUID!
+    cupomaximo: Int!
+    anio: Int!
+    idprofesor: UUID!
+    profesor: Profesor!
+    materia: Materia!
+    inscripciones_curso: [Inscripciones_curso!]
+}
+
+type Query {
+    getCursos: [Curso!],
+    getMisCursos(token: String!): [Curso!],
+    getCursosPosibles(token: String!): [Curso!],
+    getCursosMat(idmateria: UUID!): [Curso!],
+    getDetalleCurso(identificador: UUID!): [Curso!],
+    getCurso (identificador: UUID!): Curso!,
+    getMisPromedios (idalumno: UUID!): [Curso]
+}
+
+type Mutation {
+    createCurso(input: CreateCursoInput): Curso,
+    updateCurso(identificador: UUID! idmateria: UUID! cupomaximo: Int! anio: Int! idprofesor: UUID!): Curso
+}
+
+input CreateCursoInput {
+    idmateria: UUID!,
+    cupomaximo: Int!,
+    anio: Int!,
+    idprofesor: UUID!
+}

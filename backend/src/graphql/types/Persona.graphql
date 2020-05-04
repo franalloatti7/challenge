@@ -1,0 +1,39 @@
+type Persona {
+    identificador: UUID!
+    tipodoc: String!
+    documento: Bigint!
+    nombre: String!
+    apellido: String!
+    fechanac: Date!
+    direccion: String!
+    password: String!
+    alumno: Alumno
+    profesor: Profesor
+    token: String
+    admin: String
+}
+
+type Query {
+    getPersonas: [Persona!],
+    getPersona (token: String!, identificador: UUID!): Persona!,
+    validarToken (token: String!): [Persona!],
+    getPersonaLogin (documento: Bigint!, password: String!): Persona!,
+    getLogin (token: String!): Persona
+}
+
+type Mutation {
+    createDefault: Persona,
+    createPersona(input: CreatePersonaInput): Persona,
+    updatePersona(tipodoc: String!, documento: Bigint!, nombre: String!, apellido: String!, fechanac: Date!, direccion: String!, identificador: UUID!): Persona,
+    updatePassword(token: String!, newpassword: String!): Persona
+}
+
+input CreatePersonaInput {
+    tipodoc: String!, 
+    documento: Bigint!, 
+    nombre: String!, 
+    apellido: String!, 
+    fechanac: Date!, 
+    direccion: String!,
+    password: String!
+}

@@ -1,0 +1,25 @@
+type Alumno {
+    identificador: UUID!
+    idpersona: UUID!
+    legajo: Int!
+    persona: Persona!
+    inscripciones_curso: [Inscripciones_curso]
+    inscripciones_carrera: [Inscripciones_carrera]
+}
+
+type Query {
+    getAlumnos: [Alumno!],
+    getAlumnosCurso(idcurso: UUID!): [Alumno!],
+    getEstadoAcademico (identificador: UUID!): Alumno,
+    getAlumno (identificador: UUID!): Alumno!
+}
+
+type Mutation {
+    createAlumno(input: CreateAlumnoInput): Alumno,
+    updateAlumno(legajo: Int!, idpersona: UUID!, identificador: UUID!): Alumno
+}
+
+input CreateAlumnoInput {
+    idpersona: UUID!, 
+    legajo: Int!
+}

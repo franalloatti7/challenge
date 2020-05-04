@@ -1,0 +1,22 @@
+type Profesor {
+    identificador: UUID!
+    idpersona: UUID!
+    descripcion_cargo: String!
+    persona: Persona!
+    curso: [Curso]
+}
+
+type Query {
+    getProfesores: [Profesor!]
+    getProfesor (identificador: UUID!): Profesor!
+}
+
+type Mutation {
+    createProfesor(input: CreateProfesorInput): Profesor,
+    updateProfesor(descripcion_cargo: String!, idpersona: UUID!, identificador: UUID!): Profesor
+}
+
+input CreateProfesorInput {
+    idpersona: UUID!, 
+    descripcion_cargo: String!
+}

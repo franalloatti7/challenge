@@ -1,0 +1,18 @@
+package ejercicios;
+
+/**
+ * Crear una clase Persona con los siguientes campos
+ * (con sus respectivos getters y setters)
+ * 
+ * TipoDocumento - enum (dni/libretacivica) 
+ * NroDocumento - Integer
+ * Nombre - String
+ * Apellido - String
+ * FechaNacimiento - Date
+ *  
+ * @author examen
+ *
+ */
+public class Ejercicio2 {
+
+}

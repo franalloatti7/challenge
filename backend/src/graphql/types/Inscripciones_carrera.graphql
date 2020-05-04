@@ -1,0 +1,26 @@
+type Inscripciones_carrera {
+    identificador: UUID!
+    idalumno: UUID!
+    idcarrera: UUID!
+    fechainscripcion: Date!
+    carrera: Carrera!
+    alumno: Alumno!
+    token: String
+}
+
+type Query {
+    getInscripciones_carreras: [Inscripciones_carrera!],
+    getMisInscripcionesCar(token: String!) : [Inscripciones_carrera!],
+    getInscripciones_carrera (identificador: UUID!): Inscripciones_carrera!,
+    getPromedios (idalumno: UUID!): [Inscripciones_carrera]
+}
+
+type Mutation {
+    createInscripciones_carrera(input: CreateInscripciones_carreraInput): Inscripciones_carrera
+}
+
+input CreateInscripciones_carreraInput {
+    idcarrera: UUID!,
+    fechainscripcion: Date!,
+    token: String
+}

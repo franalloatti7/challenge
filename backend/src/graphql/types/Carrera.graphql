@@ -1,0 +1,26 @@
+type Carrera {
+    identificador: UUID!
+    nombre: String!
+    descripcion: String!
+    fechadesde: Date!
+    fechahasta: Date
+    inscripciones_carrera: [Inscripciones_carrera]
+    materia: [Materia]
+}
+
+type Query {
+    getCarreras: [Carrera!],
+    getCarrera (identificador: UUID!): Carrera!
+}
+
+type Mutation {
+    createCarrera(input: CreateCarreraInput): Carrera,
+    updateCarrera(identificador: UUID! nombre: String! descripcion: String! fechadesde: Date!): Carrera,
+    updateFechaCarrera(identificador: UUID!, fechahasta: Date!): Carrera
+}
+
+input CreateCarreraInput {
+    nombre: String!,
+    descripcion: String!,
+    fechadesde: Date!
+}

@@ -1,0 +1,10 @@
+INDEX VERSION 1.127+/home/examen/Escritorio/fuentes-entrevista-tecnica/apellido.nombres/workspace-java/.metadata/.plugins/org.eclipse.jdt.core
+3877108753.index
+3806379418.index
+1150366783.index
+3254919786.index
+3368800820.index
+3019268738.index
+3241332491.index
+3104191383.index
+1449775907.index

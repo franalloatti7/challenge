@@ -1,0 +1,24 @@
+package ejercicios;
+
+/**
+ * A. Crear una clase Persona con los siguientes campos
+ * (con sus respectivos getters y setters)
+ * 
+ * TipoDocumento - enum (dni/libretacivica) 
+ * NroDocumento - Integer
+ * Nombre - String
+ * Apellido - String
+ * FechaNacimiento - Date
+ * 
+ * B. En la clase "Ejercicio2" crear una nueva instancia
+ * de la clase persona y settearle valores reales con tus datos
+ * 
+ * 
+ * C. Imprimir los valores en consola 
+ *  
+ * @author examen
+ *
+ */
+public class Ejercicio2 {
+
+}

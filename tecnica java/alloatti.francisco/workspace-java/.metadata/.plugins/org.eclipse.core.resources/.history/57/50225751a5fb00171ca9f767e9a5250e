@@ -1,0 +1,12 @@
+package ejercicios;
+
+/**
+ * Crear una clase llamada Alumno que posea los siguientes campos
+ * con sus respectivos getters y setters.
+ * Campos: Legajo, Nombre, Apellido,  
+ * @author examen
+ *
+ */
+public class Ejercicio2 {
+
+}
