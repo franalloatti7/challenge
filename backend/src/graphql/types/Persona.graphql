@@ -15,6 +15,7 @@ type Persona {
 
 type Query {
     getPersonas: [Persona!],
+    getPersonasTodas: [Persona!],
     getPersona (token: String!, identificador: UUID!): Persona!,
     validarToken (token: String!): [Persona!],
     getPersonaLogin (documento: Bigint!, password: String!): Persona!,

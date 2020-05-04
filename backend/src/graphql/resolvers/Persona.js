@@ -5,6 +5,9 @@ export default {
     getPersonas: (parent, args, { models }) => {
       return models.Persona.findAll({where: {admin: "no"}});
     },
+    getPersonasTodas: (parent, args, { models }) => {
+      return models.Persona.findAll();
+    },
     getPersona: async (parent, { token, identificador }, { models }) => {
       let { persona } = await models.Persona.prototype.validToken(token);
       return models.Persona.findByPk(identificador);

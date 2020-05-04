@@ -1,5 +1,5 @@
 {
-    "serverPort": 3300,
+    "serverPort": 3500,
     "db": {
         "host": "localhost",
         "dialect": "postgres",
