@@ -1,6 +1,6 @@
 ## CHALLENGE - TECSO
 
-APP Web realizada con: graphQL, Apollo Postgres, React, Sequelize, Bootstrap, etc.
+APP Web realizada con: graphQL, Apollo Server, Postgres, React, Sequelize, Bootstrap, etc.
 
 Intrucciones para correr la APP Web:
 
